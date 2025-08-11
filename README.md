@@ -1,23 +1,28 @@
-# TOP - Project Knight's Shortest Path (BFS)
+# ♞ Knight's Travails — BFS Pathfinding
 
-This project finds the **shortest number of moves** a knight in chess needs to travel from a given start position to a target position on an 8x8 chessboard.
-
-It uses:
-- **Graph theory** to represent the chessboard
-- **Breadth-First Search (BFS)** to find the optimal path
-- **Path reconstruction** to show the exact sequence of moves
+A JavaScript implementation of the classic **Knight’s Travails** problem from [The Odin Project](https://www.theodinproject.com/lessons/javascript-knights-travails).  
+Given a start and end position on a standard chessboard, this program finds the **shortest possible path** a knight can take using **Breadth-First Search (BFS)**.
 
 ---
 
-## 🔍 How It Works
-1. **Board as a Graph**  
-   Each square is a **node**, and possible knight moves form **edges** between them.
-   
-2. **BFS Search**  
-   BFS guarantees the shortest path in an unweighted graph.  
-   It explores all possible moves layer by layer until the target is found.
+## 📜 Problem Statement
 
-3. **Path Reconstruction**  
-   Using a `parent` map, the program walks backwards from the target to reconstruct the route taken.
+On a standard 8×8 chessboard:
+- A knight can move in an “L” shape:  
+  → 2 squares in one direction, then 1 square perpendicular  
+  → or 1 square in one direction, then 2 squares perpendicular
+- Given any start and end position, find the shortest sequence of moves to reach the target.
+- Output **every position visited** along the shortest path.
 
----
+Example:
+
+knightMoves([3,3], [4,3])
+
+// Output:
+
+  You made it in 3 moves! Here's your path:
+ 
+[3,3]
+[4,5]
+[2,4]
+[4,3]
